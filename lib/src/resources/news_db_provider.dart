@@ -63,14 +63,14 @@ class NewsDbProvider implements Source, Cache {
 
   Future<int> addItem(ItemModel item) {
     return db.insert(
-      'Itens',
+      'Items',
       item.toMap(),
       conflictAlgorithm: ConflictAlgorithm.ignore,
     );
   }
 
   Future<int> clear() {
-    return db.delete('Itens');
+    return db.delete('Items');
   }
 }
 

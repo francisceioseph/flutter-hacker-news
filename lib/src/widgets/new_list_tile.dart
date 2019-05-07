@@ -38,12 +38,15 @@ class NewsListTile extends StatelessWidget {
     return Column(
       children: <Widget>[
         ListTile(
-          title: Text(item.title),
+          title: Text(
+            item.title,
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
           subtitle: Text('${item.score} votes'),
           trailing: Column(
             children: <Widget>[
               Icon(Icons.comment),
-              Text('${item.descendants} comments'),
+              Text('${item.descendants}'),
             ],
           ),
         ),

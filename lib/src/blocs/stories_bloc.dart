@@ -12,7 +12,7 @@ class StoriesBloc {
   Observable<List<int>> get topIds => _topIds.stream;
   Observable<Map<int, Future<ItemModel>>> get items => _itemsOutput.stream;
 
-  Function(int) get fetchItems => _itemsFetcher.sink.add;
+  Function(int) get fetchItem => _itemsFetcher.sink.add;
 
   StoriesBloc() {
     _itemsFetcher.stream.transform(_itemsTransformer()).pipe(_itemsOutput);
