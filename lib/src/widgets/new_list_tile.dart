@@ -40,7 +40,10 @@ class NewsListTile extends StatelessWidget {
         ListTile(
           title: Text(
             item.title,
-            style: TextStyle(fontWeight: FontWeight.bold),
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: Colors.grey[800],
+            ),
           ),
           subtitle: Text('${item.score} votes'),
           trailing: Column(
