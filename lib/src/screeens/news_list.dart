@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import '../blocs/stories_provider.dart';
 import '../blocs/stories_bloc.dart';
-import '../widgets//new_list_tile.dart';
+import '../widgets/new_list_tile.dart';
+import '../widgets/refresh.dart';
 
 class NewsList extends StatelessWidget {
   Widget build(context) {
@@ -26,13 +27,15 @@ class NewsList extends StatelessWidget {
           );
         }
 
-        return ListView.builder(
-          itemCount: snapshot.data.length,
-          itemBuilder: (context, int index) {
-            return NewsListTile(
-              itemId: snapshot.data[index],
-            );
-          },
+        return Refresh(
+          child: ListView.builder(
+            itemCount: snapshot.data.length,
+            itemBuilder: (context, int index) {
+              return NewsListTile(
+                itemId: snapshot.data[index],
+              );
+            },
+          ),
         );
       },
     );
